@@ -1,0 +1,14 @@
+CREATE OR REPLACE FUNCTION
+get_customers (from_ integer, to_ integer)
+RETURNS table(customer_id integer, first_name varchar, last_name varchar)
+LANGUAGE plpgsql
+as
+$$
+BEGIN 
+if from_ < 1 or to_ > 600 then raise exception 'indexes out of boundaries';
+else
+return query
+select customer.customer_id, customer.first_name, customer.last_name from customer where customer.customer_id between from_ and to_ order by address_id;
+end if;
+END;
+$$
