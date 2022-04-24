@@ -1,0 +1,3 @@
+1.  We read the same data  before and after we updated table in second session, because when repeatable read is used we save database state and work only we such state  in whole transaction.
+But when we did commit in second session we saw updated data in 1 session unlike in repeatable read.
+2. In second session we became into blocking state and waiting till commit in first session.

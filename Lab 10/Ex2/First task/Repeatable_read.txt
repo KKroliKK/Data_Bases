@@ -1,0 +1,2 @@
+1. We read the same data  before and after we updated table in second session, because when repeatable read is used we save database state and work only we such state  in whole transaction.
+2. we have error 'ERROR:  could not serialize access due to concurrent update' because we did update in second session.

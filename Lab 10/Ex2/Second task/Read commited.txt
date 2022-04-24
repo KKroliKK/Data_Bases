@@ -1,0 +1,4 @@
+1. We don't see result of moving Bob to another group untill commit in second transaction.
+2. After both commits we will see all  changes moving to another group from 2 transaction and +15 from 1 transaction.
+
+
